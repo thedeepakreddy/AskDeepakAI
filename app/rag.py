@@ -6,8 +6,8 @@ import os
 DB_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "chroma_data")
 chroma_client = chromadb.PersistentClient(path=DB_DIR)
 
-# We use a default lightweight sentence transformer for embeddings
-sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
+# We use the default ONNX embedding function to drastically reduce RAM usage
+sentence_transformer_ef = embedding_functions.DefaultEmbeddingFunction()
 
 # Get or create the collection for DeepakLLM's knowledge base
 collection = chroma_client.get_or_create_collection(

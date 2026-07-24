@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.db
+chroma_db/
+huggingface_data/
+chroma_data/
+Base Offline Model/
+data_uploads/
+.env
+.DS_Store
+*.pyc

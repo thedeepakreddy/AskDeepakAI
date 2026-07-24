@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AskDeepakAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="app-sidebar" id="appSidebar">
+    <div class="sidebar-header">
+      <button class="new-chat-btn" id="newChatBtn">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        New Chat
+      </button>
+    </div>
+    <div class="chat-list" id="chatList">
+      <!-- Chat history items will be injected here -->
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="app-main">
+    <header class="app-header">
+      <button class="menu-toggle-btn icon-btn" id="menuToggleBtn" aria-label="Toggle Sidebar">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M4 6H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M4 18H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <span class="logo">AskDeepakAI</span>
+    </header>
+
+    <main class="chat-wrapper">
+      <div class="chat-column" id="chatColumn">
+        <!-- Messages injected here -->
+      </div>
+    </main>
+
+    <div class="input-region">
+      <div class="input-gradient" aria-hidden="true"></div>
+
+      <div class="input-shell">
+
+        <div class="composer">
+          <button class="icon-btn attach-btn" id="attachBtn" type="button" aria-label="Attach a file">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <input type="file" id="fileInput" hidden multiple />
+
+          <textarea
+            id="messageInput"
+            class="composer-input"
+            placeholder="Message AskDeepakAI…"
+            rows="1"
+          ></textarea>
+
+          <button class="icon-btn send-btn" id="sendBtn" type="button" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 12L20 4L13 20L11 13L4 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="model-selector-row">
+          <div class="model-selector">
+            <select id="modelSelect" aria-label="Select model">
+              <option value="pluto">DeepakLLM Pluto V1 (Groq Cloud)</option>
+              <option value="pluto_lite">DLLM Pluto-Lite (Local Offline)</option>
+              <option value="echo">DeepakLLM Echo V1 (Groq Cloud)</option>
+            </select>
+            <svg class="select-caret" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="model-description" id="modelDescription">All-purpose AI for complex reasoning and tasks.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

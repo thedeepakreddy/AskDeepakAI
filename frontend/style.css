@@ -32,6 +32,11 @@
 
 html, body {
   height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 body {
@@ -461,16 +466,19 @@ button {
 .app-main {
   flex: 1;
   transition: transform 0.3s ease;
-  min-height: 100vh;
-  position: relative;
 }
 
 body {
   overflow: hidden; /* Hide body scroll, let app-main scroll */
 }
 .app-main {
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .app-sidebar {

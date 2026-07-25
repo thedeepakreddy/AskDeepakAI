@@ -580,3 +580,47 @@ body {
   color: var(--ink);
   font-weight: 500;
 }
+
+/* ============================================
+   Sidebar Footer (Products)
+   ============================================ */
+.sidebar-footer {
+  padding: 16px 20px 24px;
+  border-top: 1px solid var(--hairline);
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.footer-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  margin: 4px 0 2px 0;
+}
+
+.footer-link {
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.footer-link:hover {
+  color: var(--ink);
+}
+
+.footer-divider {
+  height: 1px;
+  background: var(--hairline);
+  margin: 8px 0;
+}
+
+.creator-link {
+  font-weight: 500;
+}
